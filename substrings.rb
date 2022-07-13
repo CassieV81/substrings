@@ -12,4 +12,6 @@ end
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
-substrings("Howdy partner, sit down! How's it going?", dictionary)
+substrings("Howdy partner, where is it going, sit down low! How's it going?", dictionary)
+
+# => {"howdy"=>1, "partner"=>1, "it"=>2, "going"=>2, "sit"=>1, "down"=>1, "low"=>1}
