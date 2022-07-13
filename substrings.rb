@@ -1,5 +1,7 @@
 def substrings(word, list_of_words)
-  words_array = word.split
+  # split words and remove special characters with "gsub(/[^a-zA-Z0-9\ ]/,"")"
+  # the space at the end of "9\" is to keep the spaces between words
+  words_array = word.downcase.gsub(/[^a-zA-Z0-9\ ]/,"").split
   words_array.keep_if {|v| list_of_words.include?(v)}
   words = words_array.reduce(Hash.new(0)) do |result, count|
     result[count] += 1
@@ -10,4 +12,4 @@ end
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
-substrings("how is it going below the owns part below going?", dictionary)
+substrings("Howdy partner, sit down! How's it going?", dictionary)
